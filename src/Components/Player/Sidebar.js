@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import AppLogo from "../UI/AppLogo";
-import HomeIcon from "../UI/HomeIcon";
-import LibraryIcon from "../UI/LibraryIcon";
-import SearchIcon from "../UI/SearchIcon";
+import SpotifyContext from "../../Store/spotify-Contex";
 import SidebarOption from "./SidebarOption";
+import HomeIcon from "@material-ui/icons/Home";
+import SearchIcon from "@material-ui/icons/Search";
+import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import "./Sidebar.css";
 const Sidebar = () => {
+  const spotifyCtx = useContext(SpotifyContext);
+  console.log(spotifyCtx.playlists);
   return (
     <nav className="sidebar">
       <div className="logo">
@@ -19,11 +22,19 @@ const Sidebar = () => {
           <SearchIcon />
         </SidebarOption>
         <SidebarOption Icon={true} option="Library">
-          <LibraryIcon />
+          <LibraryMusicIcon />
         </SidebarOption>
       </ul>
       <section>
         <div className="playLists-lable">Playlists</div>
+        <ul className="playlists">
+          {spotifyCtx.playlists?.items?.map((playlist) => {
+            return <SidebarOption option={playlist.name}></SidebarOption>;
+          })}
+
+          <SidebarOption option="Rock"></SidebarOption>
+          <SidebarOption option="Hip Hop2"></SidebarOption>
+        </ul>
       </section>
     </nav>
   );

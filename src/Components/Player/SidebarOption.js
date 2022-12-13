@@ -1,8 +1,9 @@
 import React from "react";
+import classes from "./SidebarOption.module.css";
 
 const SidebarOption = (props) => {
   return (
-    <li className="nav-item">
+    <li className={classes["nav-item"]}>
       <a href="/#">
         {props.Icon && props.children} <span>{props.option}</span>
       </a>

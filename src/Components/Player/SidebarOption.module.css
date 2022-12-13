@@ -1,0 +1,12 @@
+.nav-item > a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 40px;
+  text-decoration: none;
+  color: #b3b3b3;
+  font-weight: 500;
+}
+.nav-item :hover {
+  color: white;
+}

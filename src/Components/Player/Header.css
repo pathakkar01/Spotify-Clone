@@ -1,0 +1,49 @@
+.player-container {
+  width: 100%;
+}
+header {
+  padding: 16px 32px;
+  display: flex;
+  height: 72px;
+  width: 100%;
+  /* /align-items: center; */
+  justify-content: space-between;
+}
+.profile-btn {
+  background-color: var(--background-base);
+  border: none;
+  border-radius: 24px;
+  color: white;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.profile-btn figure {
+  width: 28px;
+  height: 28px;
+}
+.profile-btn img {
+  border-radius: 50%;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.profile-btn svg {
+  margin-right: 8px;
+}
+
+.back-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

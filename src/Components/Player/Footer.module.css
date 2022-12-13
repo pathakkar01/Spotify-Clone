@@ -1,0 +1,60 @@
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: var(--footer-color);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 20px;
+}
+/* .footer > div {
+  flex: 1;
+} */
+.footer__left {
+  flex: 0.3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: white;
+}
+.footer__left img {
+  height: 50px;
+  width: 50px;
+}
+.songInfo {
+  font-size: 14px;
+}
+.songInfo p {
+  font-size: 11px;
+  padding-top: 5px;
+}
+.footer__center,
+.footer__right {
+  flex: 0.4;
+  padding: 0 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.2);
+  gap: 16px;
+
+  /* max-width: 300px; */
+}
+.footer__center > svg {
+  padding: 2px;
+}
+.footer__right {
+  flex: 0.3;
+}
+.footer__icon {
+  cursor: pointer;
+}
+.footer__icon:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.2) !important;
+}
