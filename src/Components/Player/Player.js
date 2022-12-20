@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import Header from "./Header";
+
 import "./Player.css";
 import Body from "./Body";
 import Footer from "./Footer";
