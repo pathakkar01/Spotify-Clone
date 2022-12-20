@@ -8,7 +8,7 @@ import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import "./Sidebar.css";
 const Sidebar = () => {
   const spotifyCtx = useContext(SpotifyContext);
-  console.log(spotifyCtx.playlists);
+
   return (
     <nav className="sidebar">
       <div className="logo">

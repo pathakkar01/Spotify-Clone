@@ -6,6 +6,8 @@ const defaultContext = {
   user: null,
   token: null,
   playlists: [],
+  topPlaylist: [],
+  currPlaying: null,
 };
 
 const soptifyReducer = (state, action) => {
@@ -22,10 +24,21 @@ const soptifyReducer = (state, action) => {
     };
   }
   if (action.type === "SET_PlayList") {
-    console.log("Here", action.playlists);
     return {
       ...state,
       playlists: action.playlists,
+    };
+  }
+  if (action.type === "SET_TopPlayList") {
+    return {
+      ...state,
+      topPlaylist: action.topPlaylist,
+    };
+  }
+  if (action.type === "SET_CurrentPlaying") {
+    return {
+      ...state,
+      currPlaying: action.currPlaying,
     };
   }
   return defaultContext;
@@ -44,17 +57,32 @@ const SpotifyContexProvider = (props) => {
     dispatchSpotifyAction({ type: "SET_Token", token: token });
   };
   const setPlaylistsHandler = (playlists) => {
-    console.log("Here", playlists);
     dispatchSpotifyAction({ type: "SET_PlayList", playlists: playlists });
+  };
+  const setTopPlaylistsHandler = (topPlaylist) => {
+    dispatchSpotifyAction({
+      type: "SET_TopPlayList",
+      topPlaylist: topPlaylist,
+    });
+  };
+  const setCurrentPlayingTrackHandler = (currPlaying) => {
+    dispatchSpotifyAction({
+      type: "SET_CurrentPlaying",
+      currPlaying: currPlaying,
+    });
   };
 
   const soptifyContext = {
     user: spotifyState.user,
     token: spotifyState.token,
     playlists: spotifyState.playlists,
+    topPlaylist: spotifyState.topPlaylist,
+    currentPlaying: spotifyState.currPlaying,
     setUser: setUserHandler,
     setToken: setTokenHandler,
     setPlaylists: setPlaylistsHandler,
+    setTopPlaylist: setTopPlaylistsHandler,
+    setCurrentPlayingTrack: setCurrentPlayingTrackHandler,
   };
 
   return (

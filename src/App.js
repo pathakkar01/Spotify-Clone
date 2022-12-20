@@ -20,17 +20,25 @@ const App = () => {
     const _token = hash.access_token;
 
     if (_token) {
+      console.log(_token);
       spotifyCtx.setToken(_token);
 
       Spotify.setAccessToken(_token);
 
       Spotify.getMe().then((user) => {
         spotifyCtx.setUser(user);
+        console.log(user);
       });
 
       Spotify.getUserPlaylists().then((playLists) => {
         spotifyCtx.setPlaylists(playLists);
         //console.log(spotifyCtx.playlists);
+      });
+      Spotify.getMyTopTracks().then((resposnse) => {
+        //let topTracks = resposnse.body.items;
+
+        spotifyCtx.setTopPlaylist(resposnse.items);
+        console.log("top", spotifyCtx.topPlaylist);
       });
     }
   }, [spotifyCtx]);
@@ -38,7 +46,7 @@ const App = () => {
   return (
     <>
       {!spotifyCtx.token && <Login />}
-      {spotifyCtx.token && <Player />}
+      {spotifyCtx.token && <Player Spotify={Spotify} />}
     </>
   );
 };

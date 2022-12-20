@@ -3,20 +3,25 @@ import { useContext } from "react";
 
 import SpotifyContext from "../../Store/spotify-Contex";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import "./Header.css";
+import SearchIcon from "@material-ui/icons/Search";
+import classes from "./Header.module.css";
 
 const Header = () => {
   const spotifyCtx = useContext(SpotifyContext);
 
   return (
-    <div className="player-container">
+    <div className={classes["header"]}>
       <header>
-        <button className="back-btn">
+        <button className={classes["back-btn"]}>
           <ArrowBackIosIcon />
         </button>
-        <input type="text" placeholder="What do you want to listen to?" />
+        <div className={classes["search-bar"]}>
+          <SearchIcon />
+          <input type="text" placeholder="What do you want to listen to?" />
+        </div>
+
         {spotifyCtx.user && (
-          <button className="profile-btn">
+          <button className={classes["profile-btn"]}>
             <figure>
               <img src={spotifyCtx.user.images[0].url} alt="" />
             </figure>

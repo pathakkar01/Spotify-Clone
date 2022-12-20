@@ -1,13 +1,7 @@
 .player-container {
   display: flex;
   /* flex-direction: column; */
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.6)),
-      to(var(--background-base))
-    ),
+  /* background: linear-gradient(transparent 0, rgba(0, 0, 0, 0.5) 100%),
     var(--background-noise);
-  background-color: rgb(216, 16, 40);
+  background-color: rgb(170, 49, 132); */
 }

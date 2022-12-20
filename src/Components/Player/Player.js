@@ -2,13 +2,14 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import "./Player.css";
+import Body from "./Body";
 import Footer from "./Footer";
 
-const Player = () => {
+const Player = (props) => {
   return (
     <div className="player-container">
       <Sidebar />
-      <Header />
+      <Body Spotify={props.Spotify} />
       <Footer />
     </div>
   );
